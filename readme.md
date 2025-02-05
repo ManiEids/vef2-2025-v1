@@ -56,6 +56,10 @@ All files    |   56.65 |       90 |      75 |   56.65 |
   helpers.js |     100 |      100 |     100 |     100 |                  
 -------------|---------|----------|---------|---------|-------------------
 
+vef2v1 Repository
+Máni Eiðsson verkefni 1
+
+copy af verkefnis lýsingu
 ## Markmið
 
 - Upprifjun og notkun á verkfærum og tólum úr vefforritun 1.
