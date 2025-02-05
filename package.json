@@ -5,10 +5,10 @@
   "type": "module",
   "main": "src/main.js",
   "scripts": {
-    "start": "node src/main.js",
-    "build": "node src/main.js",
-    "test": "vitest --coverage",
-    "lint": "eslint ."
+    "start": "node src/main.js", 
+    "build": "node src/main.js", 
+    "test": "vitest --coverage", 
+    "lint": "eslint ." 
   },
   "keywords": [],
   "author": "Mfe5",
