@@ -7,6 +7,7 @@ export default {
     },
     extends: [
       "eslint:recommended"
+      
     ],
     parserOptions: {
       ecmaVersion: 12,
