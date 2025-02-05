@@ -40,8 +40,8 @@ export function createIndexContent(categories) {
 </head>
 <body>
   <h1>Quiz Categories</h1>
-  <p>Created by <strong>Máni Eiðsson (mfe5)</strong></p>
-  <img src="https://media.giphy.com/media/11bX0V2WibFJIk/giphy.gif" alt="Dancing Banana" class="banana">
+  <p> Verkefni1 -  <strong>Máni Eiðsson (mfe5)</strong></p>
+  <img src="https://media.tenor.com/qcEy-XKCRssAAAAC/banana-dance.gif" alt="Dancing Banana" class="banana">
   <ul>
 `;
   categories.forEach(cat => {
@@ -50,7 +50,7 @@ export function createIndexContent(categories) {
     }
   });
   html += `  </ul>
-  <footer>Thank you for visiting!</footer>
+  <footer> more to come  .. </footer>
 </body>
 </html>
 `;
@@ -106,7 +106,7 @@ export function createCategoryContent(categoryData, title) {
     }
   });
   html += `
-  <footer>Created by <strong>Máni Eiðsson (mfe5)</strong></footer>
+  <footer> <strong>(mfe5)</strong></footer>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const buttons = document.querySelectorAll('button[data-correct]');
