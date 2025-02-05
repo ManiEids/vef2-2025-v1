@@ -1,5 +1,9 @@
 # Vefforritun 2 2025, verkefni 1
 
+vef2v1 Repository
+Máni Eiðsson verkefni 1
+
+copy af verkefnis lýsingu
 ## Markmið
 
 - Upprifjun og notkun á verkfærum og tólum úr vefforritun 1.
