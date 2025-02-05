@@ -30,8 +30,8 @@ function createIndex(categories) {
 /**
  * Býr til HTML síðu fyrir tiltekinn spurningaflokk.
  *
- * @param {string} fileName - Nafn á JSON skrá (t.d. html.json).
- * @param {string} title - Titill spurningaflokks.
+ * @param {string} fileName - Nafn á JSON skrá 
+ * @param {string} title - Titill spurningaflokks
  */
 function createCategoryPage(fileName, title) {
   log(`Creating page for: ${title}`);
