@@ -1,0 +1,21 @@
+{
+  "name": "vef2-2025-v1",
+  "version": "1.0.0",
+  "description": "Upprifjun og notkun á verkfærum og tólum úr vefforritun 1.",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "build": "node src/main.js",
+    "test": "vitest --coverage",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "Mfe5",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitest/coverage-v8": "^3.0.5",
+    "eslint": "^8.48.0",
+    "vitest": "^3.0.5"
+  }
+}
