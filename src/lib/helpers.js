@@ -86,7 +86,6 @@ export function createCategoryContent(categoryData, title) {
 </head>
 <body>
   <h1>${title}</h1>
-  <img src="https://media.giphy.com/media/11bX0V2WibFJIk/giphy.gif" alt="Dancing Banana" class="banana">
 `;
   categoryData.questions.forEach(question => {
     if (question.question && Array.isArray(question.answers)) {
