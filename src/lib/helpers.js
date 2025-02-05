@@ -30,14 +30,18 @@ export function createIndexContent(categories) {
   <meta charset="UTF-8">
   <title>Quiz Categories</title>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 1rem; }
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 1rem; text-align: center; }
     ul { list-style: none; padding: 0; }
     li { margin: 0.5rem 0; }
     a { text-decoration: none; color: #333; }
+    footer { margin-top: 2rem; font-size: 0.9rem; color: #666; }
+    .banana { width: 100px; margin: 1rem auto; }
   </style>
 </head>
 <body>
   <h1>Quiz Categories</h1>
+  <p>Created by <strong>Máni Eiðsson (mfe5)</strong></p>
+  <img src="https://media.giphy.com/media/11bX0V2WibFJIk/giphy.gif" alt="Dancing Banana" class="banana">
   <ul>
 `;
   categories.forEach(cat => {
@@ -46,6 +50,7 @@ export function createIndexContent(categories) {
     }
   });
   html += `  </ul>
+  <footer>Thank you for visiting!</footer>
 </body>
 </html>
 `;
@@ -71,15 +76,17 @@ export function createCategoryContent(categoryData, title) {
   <meta charset="UTF-8">
   <title>${title}</title>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 1rem; }
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 1rem; text-align: center; }
     .question { margin-bottom: 1rem; }
-    ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
     button { padding: 0.5rem 1rem; border: 1px solid #ccc; cursor: pointer; background-color: #f0f0f0; }
     button:disabled { cursor: default; opacity: 0.6; }
+    .banana { width: 100px; margin: 1rem auto; }
   </style>
 </head>
 <body>
   <h1>${title}</h1>
+  <img src="https://media.giphy.com/media/11bX0V2WibFJIk/giphy.gif" alt="Dancing Banana" class="banana">
 `;
   categoryData.questions.forEach(question => {
     if (question.question && Array.isArray(question.answers)) {
@@ -98,15 +105,14 @@ export function createCategoryContent(categoryData, title) {
 `;
     }
   });
-  // Include a simple inline script for interactivity
   html += `
+  <footer>Created by <strong>Máni Eiðsson (mfe5)</strong></footer>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const buttons = document.querySelectorAll('button[data-correct]');
       buttons.forEach(button => {
         button.addEventListener('click', function() {
           const isCorrect = button.getAttribute('data-correct') === 'true';
-          // Disable all buttons in the same question
           const siblingButtons = button.closest('ul').querySelectorAll('button');
           siblingButtons.forEach(btn => { btn.disabled = true; });
           if (isCorrect) {
