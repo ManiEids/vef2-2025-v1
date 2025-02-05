@@ -1,10 +1,33 @@
-# Vefforritun 2 2025, verkefni 1
-vef2v1 Repository Máni Eiðsson verkefni 1
+# Vefforritun 2 2025, Verkefni 1
 
-copy af verkefnis lýsingu
+**vef2v1 Repository**  
+*Máni Eiðsson - Verkefni 1*
 
+---
+
+## Verkefnislýsing (Copy af verkefnis lýsingu)
+
+### Markmið
+
+- Upprifjun og notkun á verkfærum og tólum úr vefforritun 1.
+- Ósamstillt forritun með Node.js og notkun á módúlum.
+- Útbúa test og setja upp keyrslu á testum með GitHub Actions.
+- Vinnsla með gagnastrúktúra og staðfestingu á gögnum.
+
+### Verkefnið
+
+Gefin eru gögn fyrir krossaspurningar um HTML, CSS og JavaScript ásamt skrá sem vísar í þær. Skrifa skal forrit sem les þessar skrár, útbýr HTML í build skrefi fyrir spurningarnar og tengir við framenda útfærslu.
+
+Skrifa skal allan kóða, ekki skal nota forritasöfn frá t.d. NPM.
+
+---
+
+## Build og Test Skilaboð
+
+### Build
+
+```bash
 PS E:\vef2\vef2-2025-v1> npm run build
-
 
 > vef2-2025-v1@1.0.0 build
 > node src/main.js
@@ -24,11 +47,12 @@ PS E:\vef2\vef2-2025-v1> npm run build
 [LOG] Creating page for: Ógild gögn, ætti ég að birtast?
 [ERROR] Error in data for corrupt.json: Invalid category data
 [LOG] Application executed successfully
+
+
 PS E:\vef2\vef2-2025-v1> npm test
 
 > vef2-2025-v1@1.0.0 test
 > vitest --coverage
-
 
  DEV  v3.0.5 E:/vef2/vef2-2025-v1
       Coverage enabled with v8
@@ -55,20 +79,3 @@ All files    |   56.65 |       90 |      75 |   56.65 |
  src/lib     |     100 |      100 |     100 |     100 |                  
   helpers.js |     100 |      100 |     100 |     100 |                  
 -------------|---------|----------|---------|---------|-------------------
-
-vef2v1 Repository
-Máni Eiðsson verkefni 1
-
-copy af verkefnis lýsingu
-## Markmið
-
-- Upprifjun og notkun á verkfærum og tólum úr vefforritun 1.
-- Ósamstillt forritun með Node.js og notkun á módúlum.
-- Útbúa test og setja upp keyrslu á testum með GitHub Actions.
-- Vinnsla með gagnastrúktúra og staðfestingu á gögnum.
-
-## Verkefnið
-
-Gefin eru gögn fyrir krossaspurningar um HTML, CSS og JavaScript ásamt skrá sem vísar í þær. Skrifa skal forrit sem les þessar skrár, útbýr HTML í build skrefi fyrir spurningarnar og tengir við framenda útfærslu.
-
-Skrifa skal allan kóða, ekki skal nota forritasöfn frá t.d. NPM.
