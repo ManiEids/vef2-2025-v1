@@ -2,19 +2,17 @@ import fs from 'fs';
 import { readJson, createIndexContent, createCategoryContent } from './lib/helpers.js';
 
 /**
- * Skrifar skilaboð bæði í console og í log-skrána.
+ * Skrifar skilaboð í console.
  *
  * @param {string} message - Skilaboð sem á að prenta.
  * @param {boolean} [isError=false] - Ef satt, prentar sem error.
  */
-function logToFile(message, isError = false) {
-  const logFilePath = './dist/terminalOutput.txt';
+function log(message, isError = false) {
   if (isError) {
-    console.error(message);
+    console.error(`[ERROR] ${message}`);
   } else {
-    console.log(message);
+    console.log(`[LOG] ${message}`);
   }
-  fs.appendFileSync(logFilePath, `${isError ? '[ERROR]' : '[LOG]'} ${message}\n`);
 }
 
 /**
@@ -23,10 +21,10 @@ function logToFile(message, isError = false) {
  * @param {Array} categories - Fylki af hlutum með 'title' og 'file'.
  */
 function createIndex(categories) {
-  logToFile('Creating index.html');
+  log('Creating index.html');
   const html = createIndexContent(categories);
   fs.writeFileSync('./dist/index.html', html);
-  logToFile('index.html created');
+  log('index.html created');
 }
 
 /**
@@ -36,62 +34,57 @@ function createIndex(categories) {
  * @param {string} title - Titill spurningaflokks.
  */
 function createCategoryPage(fileName, title) {
-  logToFile(`Creating page for: ${title}`);
+  log(`Creating page for: ${title}`);
   let data;
   try {
     data = readJson(`./data/${fileName}`);
   } catch (error) {
-    logToFile(error.message, true);
+    log(`Error reading data for ${fileName}: ${error.message}`, true);
     return;
   }
   let html;
   try {
     html = createCategoryContent(data, title);
   } catch (error) {
-    logToFile(`Error in data for ${fileName}: ${error.message}`, true);
+    log(`Error in data for ${fileName}: ${error.message}`, true);
     return;
   }
   const outputPath = `./dist/${fileName.replace('.json', '.html')}`;
   fs.writeFileSync(outputPath, html);
-  logToFile(`${outputPath} created`);
+  log(`${outputPath} created`);
 }
 
 /**
  * Aðalfall sem keyrir forritið:
  *  - Athugar hvort dist/ möppan sé til og býr hana til ef ekki.
- *  - Hreinsar log-skrána.
  *  - Les index.json og býr til index.html og síður fyrir hvern flokk.
  */
 function main() {
-  logToFile('Starting application');
+  log('Starting application');
 
   // Athuga og búa til dist/ möppu ef hún er ekki til
   if (!fs.existsSync('./dist')) {
     fs.mkdirSync('./dist');
-    logToFile('dist/ folder created');
+    log('dist/ folder created');
   }
-
-  // Hreinsa log-skrána
-  const logFilePath = './dist/terminalOutput.txt';
-  fs.writeFileSync(logFilePath, '');
 
   // Lesa index.json
   let categories;
   try {
     categories = readJson('./data/index.json');
   } catch (error) {
-    logToFile(error.message, true);
+    log(error.message, true);
     return;
   }
   if (!Array.isArray(categories)) {
-    logToFile('index.json does not contain an array', true);
+    log('index.json does not contain an array', true);
     return;
   }
 
   // Veljum aðeins gildar flokka
   const validCategories = categories.filter(cat => cat.title && cat.file);
   if (validCategories.length < categories.length) {
-    logToFile('Some invalid categories were skipped', true);
+    log('Some invalid categories were skipped', true);
   }
 
   // Búa til index.html
@@ -102,7 +95,7 @@ function main() {
     createCategoryPage(cat.file, cat.title);
   });
 
-  logToFile('Application executed successfully');
+  log('Application executed successfully');
 }
 
 main();
